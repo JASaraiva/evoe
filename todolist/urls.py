@@ -18,6 +18,7 @@ from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
 from todolist.list.api.viewsets import ListViewSet
+from rest_framework.authtoken.views import obtain_auth_token
 
 router = routers.DefaultRouter()
 router.register(r'list', ListViewSet)
@@ -25,4 +26,5 @@ router.register(r'list', ListViewSet)
 urlpatterns = [
     path('',include(router.urls)),
     path('admin/', admin.site.urls),
+    path('api-auth/',obtain_auth_token)
 ]

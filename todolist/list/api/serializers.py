@@ -4,4 +4,4 @@ from todolist.list.models import List
 class ListSerializer(ModelSerializer):
     class Meta:
         model= List
-        fields= ['item', 'status', 'user']
+        fields= ['id','item', 'checked', 'user']

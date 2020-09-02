@@ -1,9 +1,6 @@
 # evoe
 API Todolist Evoe - Desenvolvido com Django e Django Rest Framework.
 
-Link para o repositório no github:
-https://github.com/JASaraiva/evoe
-
 Para visualizar a documentação da API, acesse o endereço abaixo:
 http://localhost:8000/docs/
 

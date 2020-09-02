@@ -25,8 +25,6 @@ class ListViewSet(ModelViewSet):
            "checked": request.data["checked"],
            "user": request.user.id,
         }
-        
-
         serializer = self.get_serializer(data=item)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)

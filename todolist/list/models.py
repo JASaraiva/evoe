@@ -7,4 +7,4 @@ class List(models.Model):
     checked         = models.BooleanField(default=False)
 
     def __str__(self):
-        return item
+        return "Item: " + self.item + ' | ' + "User: " + str(self.user)

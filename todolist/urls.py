@@ -21,7 +21,7 @@ from todolist.list.api.viewsets import ListViewSet
 from rest_framework.authtoken.views import obtain_auth_token
 
 router = routers.DefaultRouter()
-router.register(r'list', ListViewSet)
+router.register(r'list', ListViewSet, basename='List')
 
 urlpatterns = [
     path('',include(router.urls)),

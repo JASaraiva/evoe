@@ -4,15 +4,19 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.response import Response
 from todolist.list.models import List
 from todolist.list.api.serializers import ListSerializer
-from django.contrib.auth.models import User
 
 class ListViewSet(ModelViewSet):
 
     permission_classes = [IsAuthenticated] 
     authentication_classes = [TokenAuthentication] 
 
-    queryset = List.objects.all()
+    #queryset = List.objects.all()
     serializer_class = ListSerializer
+
+    def get_queryset(self):
+        userid = self.request.user.id
+        return List.objects.filter(user = userid)
+      
 
 
     def create(self, request):
